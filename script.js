@@ -1,5 +1,5 @@
 /* ======================================================
-   Earnie Advance Link Hub
+   P.V.T. & T. Plas Link Hub
    แก้ไขลิงก์ทั้งหมดได้ในตัวแปร links ด้านล่าง
 ====================================================== */
 
@@ -8,7 +8,7 @@ const links = [
     title: "เว็บไซต์หลัก",
     subtitle: "รู้จักสินค้าและบริการของเรา",
     icon: "language",
-    url: "https://example.com",
+    url: "https://www.pvttplas.com/th",
   },
   {
     title: "LINE Official",
@@ -16,30 +16,30 @@ const links = [
     icon: "chat",
     url: "https://line.me/",
   },
-  {
-    title: "Facebook",
-    subtitle: "ติดตามข่าวสารและโปรโมชั่น",
-    icon: "thumb_up",
-    url: "https://www.facebook.com/",
-  },
-  {
-    title: "Shopee",
-    subtitle: "เลือกซื้อสินค้าผ่าน Shopee",
-    icon: "shopping_bag",
-    url: "https://shopee.co.th/",
-  },
-  {
-    title: "Lazada",
-    subtitle: "เลือกซื้อสินค้าผ่าน Lazada",
-    icon: "storefront",
-    url: "https://www.lazada.co.th/",
-  },
-  {
-    title: "TikTok",
-    subtitle: "ชมวิดีโอสินค้าและการใช้งาน",
-    icon: "smart_display",
-    url: "https://www.tiktok.com/",
-  },
+  // {
+  //   title: "Facebook",
+  //   subtitle: "ติดตามข่าวสารและโปรโมชั่น",
+  //   icon: "thumb_up",
+  //   url: "https://www.facebook.com/",
+  // },
+  // {
+  //   title: "Shopee",
+  //   subtitle: "เลือกซื้อสินค้าผ่าน Shopee",
+  //   icon: "shopping_bag",
+  //   url: "https://shopee.co.th/",
+  // },
+  // {
+  //   title: "Lazada",
+  //   subtitle: "เลือกซื้อสินค้าผ่าน Lazada",
+  //   icon: "storefront",
+  //   url: "https://www.lazada.co.th/",
+  // },
+  // {
+  //   title: "TikTok",
+  //   subtitle: "ชมวิดีโอสินค้าและการใช้งาน",
+  //   icon: "smart_display",
+  //   url: "https://www.tiktok.com/",
+  // },
   {
     title: "แผนที่บริษัท",
     subtitle: "ดูตำแหน่งและเส้นทางการเดินทาง",

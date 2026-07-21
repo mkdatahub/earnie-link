@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f3d2e" />
+
+  <title>ลงทะเบียนรับสิทธิ์ | P.V.T. & T. Plas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="./register.css" />
+</head>
+
+<body>
+  <main class="page-shell">
+    <section class="register-card">
+
+      <!-- โลโก้บริษัท -->
+      <div class="brand-mark">
+        <img
+          src="/images/Logo-บริษัท(ใช้งานจริง).png"
+          alt="P.V.T. & T. Plas Logo"
+        />
+      </div>
+
+      <p class="eyebrow">P.V.T. & T. PLAS</p>
+
+      <h1>ลงทะเบียนรับสิทธิ์</h1>
+
+      <p class="tagline">
+        กรอกข้อมูลเพียงเล็กน้อย<br />
+        แล้วแสดงหน้าจอยืนยันกับเจ้าหน้าที่
+      </p>
+
+      <!-- แบบฟอร์มลงทะเบียน -->
+      <form id="registerForm" class="register-form" novalidate>
+
+        <div class="form-group">
+          <label for="customerName">
+            ชื่อผู้ติดต่อ
+            <span class="required">*</span>
+          </label>
+
+          <div class="input-wrap">
+            <span class="material-symbols-outlined input-icon">person</span>
+
+            <input
+              id="customerName"
+              name="customerName"
+              type="text"
+              placeholder="กรอกชื่อของคุณ"
+              autocomplete="name"
+              maxlength="100"
+              required
+            />
+          </div>
+
+          <p id="customerNameError" class="field-error"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="companyName">
+            บริษัท / ร้านค้า
+            <span class="required">*</span>
+          </label>
+
+          <div class="input-wrap">
+            <span class="material-symbols-outlined input-icon">apartment</span>
+
+            <input
+              id="companyName"
+              name="companyName"
+              type="text"
+              placeholder="กรอกชื่อบริษัทหรือร้านค้า"
+              autocomplete="organization"
+              maxlength="150"
+              required
+            />
+          </div>
+
+          <p id="companyNameError" class="field-error"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="phoneNumber">
+            เบอร์โทรศัพท์
+            <span class="required">*</span>
+          </label>
+
+          <div class="input-wrap">
+            <span class="material-symbols-outlined input-icon">call</span>
+
+            <input
+              id="phoneNumber"
+              name="phoneNumber"
+              type="tel"
+              inputmode="tel"
+              placeholder="เช่น 0812345678"
+              autocomplete="tel"
+              maxlength="20"
+              required
+            />
+          </div>
+
+          <p id="phoneNumberError" class="field-error"></p>
+        </div>
+
+        <!-- ข้อความยินยอมแบบสั้น -->
+        <label class="consent-row">
+          <input id="consent" name="consent" type="checkbox" required />
+
+          <span>
+            ยินยอมให้บริษัทใช้ข้อมูลเพื่อติดต่อเกี่ยวกับสินค้า
+            บริการ และกิจกรรมของบริษัท
+          </span>
+        </label>
+
+        <p id="consentError" class="field-error consent-error"></p>
+
+        <button id="submitButton" class="submit-button" type="submit">
+          <span class="material-symbols-outlined">redeem</span>
+          <span>ลงทะเบียนรับสิทธิ์</span>
+        </button>
+
+      </form>
+
+      <!-- กล่องแสดงผลหลังลงทะเบียนสำเร็จ -->
+      <section id="successPanel" class="success-panel" hidden>
+        <div class="success-icon">
+          <span class="material-symbols-outlined">check_circle</span>
+        </div>
+
+        <h2>ลงทะเบียนเรียบร้อย</h2>
+
+        <p>
+          กรุณาแสดงหน้าจอนี้กับเจ้าหน้าที่<br />
+          เพื่อรับของที่ระลึก
+        </p>
+
+        <div class="reference-card">
+          <span class="reference-label">หมายเลขลงทะเบียน</span>
+          <strong id="referenceNumber">PVT-0000</strong>
+        </div>
+
+        <a class="link-hub-button" href="./index.html">
+          <span>เข้าสู่ Link Hub</span>
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+      </section>
+
+      <footer>
+        © <span id="currentYear"></span> P.V.T. & T. PLAS.CO.,LTD.
+      </footer>
+
+    </section>
+  </main>
+
+  <script src="./register.js"></script>
+</body>
+</html>
