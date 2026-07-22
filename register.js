@@ -3,6 +3,10 @@
    เลือกระหว่าง:
    1) ถ่ายนามบัตร
    2) กรอกข้อมูลด้วยตนเอง
+   3) ข้ามและรับของเลย (ไม่กรอกอะไร)
+
+   หลักการ: ไม่มีช่องใดบังคับกรอก มีแค่เบอร์โทรที่จะ
+   ตรวจรูปแบบให้ถ้าลูกค้าเลือกกรอกมา
 
    หมายเหตุ:
    เวอร์ชันนี้ทำงานด้านหน้าจอครบแล้ว
@@ -20,6 +24,7 @@ const successView = document.getElementById("successView");
 
 const cardChoiceButton = document.getElementById("cardChoiceButton");
 const formChoiceButton = document.getElementById("formChoiceButton");
+const skipChoiceButton = document.getElementById("skipChoiceButton");
 const backButtons = document.querySelectorAll("[data-back-to-choice]");
 
 const cardForm = document.getElementById("cardForm");
@@ -29,7 +34,6 @@ const cardPreview = document.getElementById("cardPreview");
 const retakeButton = document.getElementById("retakeButton");
 const cardImageError = document.getElementById("cardImageError");
 const cardConsent = document.getElementById("cardConsent");
-const cardConsentError = document.getElementById("cardConsentError");
 const cardSubmitButton = document.getElementById("cardSubmitButton");
 
 const registerForm = document.getElementById("registerForm");
@@ -38,10 +42,7 @@ const companyNameInput = document.getElementById("companyName");
 const phoneNumberInput = document.getElementById("phoneNumber");
 const formConsent = document.getElementById("formConsent");
 
-const customerNameError = document.getElementById("customerNameError");
-const companyNameError = document.getElementById("companyNameError");
 const phoneNumberError = document.getElementById("phoneNumberError");
-const formConsentError = document.getElementById("formConsentError");
 const formSubmitButton = document.getElementById("formSubmitButton");
 
 const referenceNumber = document.getElementById("referenceNumber");
@@ -80,6 +81,16 @@ cardChoiceButton.addEventListener("click", () => {
 
 formChoiceButton.addEventListener("click", () => {
   showView(formView);
+});
+
+skipChoiceButton.addEventListener("click", () => {
+  console.log("Registration data:", {
+    registration_type: "skipped",
+    consent: false,
+    registered_at: new Date().toISOString(),
+  });
+
+  finishRegistration();
 });
 
 backButtons.forEach((button) => {
@@ -148,49 +159,28 @@ retakeButton.addEventListener("click", () => {
   businessCardImage.click();
 });
 
-cardConsent.addEventListener("change", () => {
-  cardConsentError.textContent = "";
-});
-
+// การถ่ายนามบัตรและติ๊กยินยอมไม่บังคับ — ส่งได้แม้ไม่มีรูป
 cardForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const selectedFile = businessCardImage.files?.[0];
-  let isValid = true;
 
-  cardImageError.textContent = "";
-  cardConsentError.textContent = "";
-
-  if (!selectedFile) {
-    cardImageError.textContent = "กรุณาถ่ายหรือเลือกรูปนามบัตร";
-    isValid = false;
-  }
-
-  if (!cardConsent.checked) {
-    cardConsentError.textContent = "กรุณากดยินยอมก่อนส่งข้อมูล";
-    isValid = false;
-  }
-
-  if (!isValid) {
-    return;
-  }
-
-  setButtonLoading(cardSubmitButton, "กำลังส่งนามบัตร...");
+  setButtonLoading(cardSubmitButton, "กำลังส่งข้อมูล...");
 
   /*
     ข้อมูลที่เตรียมไว้สำหรับส่งเข้า Supabase:
 
     const cardRegistrationData = {
       registration_type: "business_card",
-      consent: true,
+      consent: cardConsent.checked,
       registered_at: new Date().toISOString(),
     };
 
-    รูป selectedFile สามารถอัปโหลดเข้า Supabase Storage ได้
+    รูป selectedFile (ถ้ามี) สามารถอัปโหลดเข้า Supabase Storage ได้
     แล้วนำ URL ของรูปไปบันทึกในตาราง event_registrations
   */
 
-  console.log("Business card file:", selectedFile);
+  console.log("Business card file:", selectedFile || "(ไม่มีรูปแนบ)");
 
   await fakeSubmitDelay();
 
@@ -201,35 +191,14 @@ cardForm.addEventListener("submit", async (event) => {
    ส่วนกรอกข้อมูลด้วยตนเอง
 ========================= */
 
-function clearFieldError(input, errorElement) {
-  input.classList.remove("is-invalid");
-  errorElement.textContent = "";
-}
-
-function showFieldError(input, errorElement, message) {
-  input.classList.add("is-invalid");
-  errorElement.textContent = message;
-}
-
-customerNameInput.addEventListener("input", () => {
-  clearFieldError(customerNameInput, customerNameError);
-});
-
-companyNameInput.addEventListener("input", () => {
-  clearFieldError(companyNameInput, companyNameError);
-});
-
 phoneNumberInput.addEventListener("input", () => {
   phoneNumberInput.value = phoneNumberInput.value.replace(
     /[^0-9+\-\s]/g,
     ""
   );
 
-  clearFieldError(phoneNumberInput, phoneNumberError);
-});
-
-formConsent.addEventListener("change", () => {
-  formConsentError.textContent = "";
+  phoneNumberInput.classList.remove("is-invalid");
+  phoneNumberError.textContent = "";
 });
 
 function isValidPhone(phone) {
@@ -237,74 +206,19 @@ function isValidPhone(phone) {
   return digitsOnly.length >= 9 && digitsOnly.length <= 15;
 }
 
-function validateManualForm() {
-  let isValid = true;
-
-  const customerName = customerNameInput.value.trim();
-  const companyName = companyNameInput.value.trim();
-  const phoneNumber = phoneNumberInput.value.trim();
-
-  clearFieldError(customerNameInput, customerNameError);
-  clearFieldError(companyNameInput, companyNameError);
-  clearFieldError(phoneNumberInput, phoneNumberError);
-  formConsentError.textContent = "";
-
-  if (!customerName) {
-    showFieldError(
-      customerNameInput,
-      customerNameError,
-      "กรุณากรอกชื่อผู้ติดต่อ"
-    );
-
-    isValid = false;
-  }
-
-  if (!companyName) {
-    showFieldError(
-      companyNameInput,
-      companyNameError,
-      "กรุณากรอกชื่อบริษัทหรือร้านค้า"
-    );
-
-    isValid = false;
-  }
-
-  if (!phoneNumber) {
-    showFieldError(
-      phoneNumberInput,
-      phoneNumberError,
-      "กรุณากรอกเบอร์โทรศัพท์"
-    );
-
-    isValid = false;
-  } else if (!isValidPhone(phoneNumber)) {
-    showFieldError(
-      phoneNumberInput,
-      phoneNumberError,
-      "กรุณาตรวจสอบเบอร์โทรศัพท์อีกครั้ง"
-    );
-
-    isValid = false;
-  }
-
-  if (!formConsent.checked) {
-    formConsentError.textContent = "กรุณากดยินยอมก่อนลงทะเบียน";
-    isValid = false;
-  }
-
-  return isValid;
-}
-
+// ทุกช่องไม่บังคับ — ตรวจแค่รูปแบบเบอร์โทรถ้ามีการกรอกมา
 registerForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  if (!validateManualForm()) {
-    const firstInvalidInput = registerForm.querySelector(".is-invalid");
+  const phoneNumber = phoneNumberInput.value.trim();
 
-    if (firstInvalidInput) {
-      firstInvalidInput.focus();
-    }
+  phoneNumberInput.classList.remove("is-invalid");
+  phoneNumberError.textContent = "";
 
+  if (phoneNumber && !isValidPhone(phoneNumber)) {
+    phoneNumberInput.classList.add("is-invalid");
+    phoneNumberError.textContent = "กรุณาตรวจสอบเบอร์โทรศัพท์อีกครั้ง";
+    phoneNumberInput.focus();
     return;
   }
 
@@ -312,9 +226,9 @@ registerForm.addEventListener("submit", async (event) => {
 
   const registrationData = {
     registration_type: "manual",
-    customer_name: customerNameInput.value.trim(),
-    company_name: companyNameInput.value.trim(),
-    phone_number: phoneNumberInput.value.trim(),
+    customer_name: customerNameInput.value.trim() || null,
+    company_name: companyNameInput.value.trim() || null,
+    phone_number: phoneNumber || null,
     consent: formConsent.checked,
     registered_at: new Date().toISOString(),
   };
