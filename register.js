@@ -83,15 +83,17 @@ formChoiceButton.addEventListener("click", () => {
   showView(formView);
 });
 
-skipChoiceButton.addEventListener("click", () => {
-  console.log("Registration data:", {
-    registration_type: "skipped",
-    consent: false,
-    registered_at: new Date().toISOString(),
-  });
+if (skipChoiceButton) {
+  skipChoiceButton.addEventListener("click", () => {
+    console.log("Registration data:", {
+      registration_type: "skipped",
+      consent: false,
+      registered_at: new Date().toISOString(),
+    });
 
-  finishRegistration();
-});
+    finishRegistration();
+  });
+}
 
 backButtons.forEach((button) => {
   button.addEventListener("click", () => {

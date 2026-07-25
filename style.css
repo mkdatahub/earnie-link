@@ -59,39 +59,20 @@ a {
   backdrop-filter: blur(16px);
 }
 
-/* .brand-mark {
-  width: 94px;
-  height: 94px;
-  margin: 0 auto 18px;
+.brand-mark {
+  width: 100%;
+  max-width: 260px;
+  height: 86px;
+  margin: 0 auto;
   display: grid;
   place-items: center;
-  position: relative;
-  overflow: hidden;
-  border-radius: 28px;
-  color: #fff;
-  font-family: "Kanit", sans-serif;
-  font-size: 34px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  background: linear-gradient(145deg, var(--primary), var(--primary-dark));
-  box-shadow: 0 14px 30px rgba(15, 91, 67, 0.28);
-} */
+}
 
-/* .brand-mark::after {
-  content: "";
-  position: absolute;
-  width: 76px;
-  height: 28px;
-  right: -18px;
-  bottom: 4px;
-  border-radius: 999px;
-  background: rgba(214, 169, 76, 0.95);
-  transform: rotate(-20deg);
-} */
-
-.brand-mark span {
-  position: relative;
-  z-index: 1;
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
 }
 
 .eyebrow {

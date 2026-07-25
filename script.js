@@ -10,12 +10,12 @@ const links = [
     icon: "language",
     url: "https://www.pvttplas.com/th",
   },
-  {
-    title: "LINE Official",
-    subtitle: "สอบถามสินค้าและพูดคุยกับฝ่ายขาย",
-    icon: "chat",
-    url: "https://line.me/",
-  },
+  // {
+  //   title: "LINE Official",
+  //   subtitle: "สอบถามสินค้าและพูดคุยกับฝ่ายขาย",
+  //   icon: "chat",
+  //   url: "https://line.me/",
+  // },
   // {
   //   title: "Facebook",
   //   subtitle: "ติดตามข่าวสารและโปรโมชั่น",
@@ -40,12 +40,12 @@ const links = [
   //   icon: "smart_display",
   //   url: "https://www.tiktok.com/",
   // },
-  {
-    title: "แผนที่บริษัท",
-    subtitle: "ดูตำแหน่งและเส้นทางการเดินทาง",
-    icon: "location_on",
-    url: "https://maps.google.com/",
-  },
+  // {
+  //   title: "แผนที่บริษัท",
+  //   subtitle: "ดูตำแหน่งและเส้นทางการเดินทาง",
+  //   icon: "location_on",
+  //   url: "https://maps.google.com/",
+  // },
 ];
 
 const linkList = document.getElementById("linkList");
