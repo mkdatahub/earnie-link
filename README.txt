@@ -1,34 +1,20 @@
-P.V.T. & T. Plas Registration Flow
+P.V.T. & T. Plas Registration Flow – Supabase V1
 
-ไฟล์ในชุดนี้
-- register.html
-- register.css
-- register.js
+เชื่อมต่อแล้วกับ:
+https://egfzqxirbekoiyjdtrmi.supabase.co
+
+ลำดับติดตั้ง
+1. เปิด Supabase > SQL Editor
+2. รันไฟล์ SQL_PATCH_registration_code.sql เพียงครั้งเดียว
+3. นำไฟล์ register.html, register.css และ register.js ขึ้น Cloudflare
+4. เปิด /register แล้วทดสอบทั้ง 2 วิธี
 
 การทำงาน
-1. หน้าแรกให้ลูกค้าเลือก
-   - ใช้นามบัตร
-   - กรอกข้อมูลด้วยตนเอง
-2. ถ้าใช้นามบัตร:
-   - เปิดกล้องหรือเลือกรูป
-   - แสดงตัวอย่าง
-   - กดยินยอม
-   - ส่งข้อมูล
-3. ถ้ากรอกข้อมูล:
-   - ชื่อผู้ติดต่อ
-   - บริษัท / ร้านค้า
-   - เบอร์โทรศัพท์
-4. แสดงหน้าลงทะเบียนสำเร็จและหมายเลขลงทะเบียน
+- กรอกข้อมูล: บันทึกลง public.event_registrations
+- ถ่ายนามบัตร: อัปโหลดเข้า Storage business-cards แล้วบันทึก path ลงตาราง
+- Bucket ยังเป็น Private
+- หน้าเว็บใช้ Publishable Key เท่านั้น ไม่ได้ใช้ Service Role Key
 
-วิธีติดตั้ง
-- นำ register.html, register.css และ register.js ไปแทนไฟล์เดิม
-- QR เดิมที่ชี้ไป /register ยังใช้ต่อได้
-- ตรวจสอบว่าโลโก้อยู่ที่:
-  /images/Logo-บริษัท(ใช้งานจริง).png
-
-สำคัญ
-- เวอร์ชันนี้ทำงานด้านหน้าจอครบแล้ว
-- รูปนามบัตรและข้อมูลยังไม่ถูกบันทึกจริง
-- ขั้นต่อไปต้องเชื่อม:
-  1. Supabase Database
-  2. Supabase Storage สำหรับเก็บรูปนามบัตร
+ตรวจสอบผล
+- Supabase > Table Editor > event_registrations
+- Supabase > Storage > business-cards
