@@ -8,7 +8,7 @@ const links = [
     title: "เว็บไซต์หลัก",
     subtitle: "รู้จักสินค้าและบริการของเรา",
     icon: "language",
-    url: "http://www.pvttplas.com/th",
+    url: "https://pvt-landing.pages.dev/",
   },
   // {
   //   title: "LINE Official",
