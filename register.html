@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0f3d2e" />
+  <meta name="theme-color" content="#17233D" />
 
   <title>ลงทะเบียนรับสิทธิ์ | P.V.T. & T. Plas</title>
 
@@ -27,72 +27,66 @@
   <main class="page-shell">
     <section class="register-card">
 
-      <div class="brand-mark">
-        <img
-          src="/images/Logo-บริษัท(ใช้งานจริง).png"
-          alt="P.V.T. & T. Plas Logo"
-        />
+      <span class="grommet" aria-hidden="true"></span>
+
+      <div class="card-body">
+
+      <div class="brand-header">
+        <div class="brand-mark">
+          <img
+            src="/images/W_Edit10.png"
+            alt="P.V.T. & T. Plas Logo"
+          />
+        </div>
       </div>
 
-      <p class="eyebrow">P.V.T. & T. PLAS</p>
+      <!-- <p class="concept-tag">
+        <span class="material-symbols-outlined">verified</span>
+        <span>Beyond Durable</span>
+      </p> -->
 
       <!-- =========================
            STEP 1: เลือกวิธีลงทะเบียน
       ========================== -->
       <section id="choiceView" class="view-section">
-        <h1>รับของที่ระลึก</h1>
-
-        <p class="tagline">
-          เลือกวิธีลงทะเบียนที่สะดวก
-        </p>
+        <!-- <h1>ลงทะเบียนรับของที่ระลึก</h1> -->
+        <p class="tagline">เลือกวิธีลงทะเบียนที่สะดวก</p>
 
         <div class="choice-list">
-          <button
-            id="cardChoiceButton"
-            class="choice-button choice-button-primary"
-            type="button"
-          >
+          <button id="cardChoiceButton" class="choice-button choice-button-primary" type="button">
             <span class="choice-icon">
               <span class="material-symbols-outlined">contact_page</span>
             </span>
-
             <span class="choice-copy">
               <strong>ใช้นามบัตร</strong>
               <small>ถ่ายรูปเพียงครั้งเดียว เร็วที่สุด</small>
             </span>
-
-            <span class="choice-badge">แนะนำ</span>
+            <span class="material-symbols-outlined choice-arrow">arrow_forward_ios</span>
+            <span class="choice-badge">แนะนำ · เร็วที่สุด</span>
           </button>
 
-          <button
-            id="formChoiceButton"
-            class="choice-button"
-            type="button"
-          >
+          <button id="formChoiceButton" class="choice-button" type="button">
             <span class="choice-icon">
               <span class="material-symbols-outlined">edit_note</span>
             </span>
-
             <span class="choice-copy">
               <strong>กรอกข้อมูลด้วยตนเอง</strong>
               <small>ชื่อ บริษัท และเบอร์โทรศัพท์</small>
             </span>
-
-            <span class="material-symbols-outlined choice-arrow">
-              arrow_forward_ios
-            </span>
+            <span class="material-symbols-outlined choice-arrow">arrow_forward_ios</span>
           </button>
         </div>
+
+        <!-- <button id="skipChoiceButton" class="skip-button" type="button">
+          ข้ามและรับของเลย
+        </button> -->
       </section>
 
       <!-- =========================
            STEP 2A: ถ่ายนามบัตร
       ========================== -->
       <section id="cardView" class="view-section" hidden>
-        <button class="back-button" type="button" data-back-to-choice>
-          <span class="material-symbols-outlined">arrow_back</span>
-          <span>ย้อนกลับ</span>
-        </button>
+        
 
         <h1>ถ่ายนามบัตร</h1>
 
@@ -109,7 +103,6 @@
               type="file"
               accept="image/*"
               capture="environment"
-              required
             />
 
             <div id="uploadPlaceholder" class="upload-placeholder">
@@ -142,7 +135,7 @@
           </button>
 
           <label class="consent-row">
-            <input id="cardConsent" type="checkbox" required />
+            <input id="cardConsent" type="checkbox" />
 
             <span>
               ยินยอมให้บริษัทใช้ข้อมูลจากนามบัตร
@@ -150,13 +143,19 @@
             </span>
           </label>
 
-          <p id="cardConsentError" class="field-error consent-error"></p>
-
           <button id="cardSubmitButton" class="submit-button" type="submit">
             <span class="material-symbols-outlined">redeem</span>
             <span>ส่งนามบัตรและรับสิทธิ์</span>
           </button>
+
+          
+
+          <!-- <p class="skip-note">ไม่มีนามบัตรก็รับของได้ ข้ามขั้นตอนนี้ได้เลย</p> -->
         </form>
+        <button class="back-button" type="button" data-back-to-choice>
+          <span class="material-symbols-outlined">arrow_back</span>
+          <span>ย้อนกลับ</span>
+        </button>
       </section>
 
       <!-- =========================
@@ -171,15 +170,12 @@
         <h1>กรอกข้อมูล</h1>
 
         <p class="tagline">
-          ใช้เวลาเพียงเล็กน้อย
+          ใช้เวลาเพียงเล็กน้อย ไม่บังคับทุกช่อง
         </p>
 
         <form id="registerForm" class="register-form" novalidate>
           <div class="form-group">
-            <label for="customerName">
-              ชื่อผู้ติดต่อ
-              <span class="required">*</span>
-            </label>
+            <label for="customerName">ชื่อผู้ติดต่อ</label>
 
             <div class="input-wrap">
               <span class="material-symbols-outlined input-icon">person</span>
@@ -191,18 +187,12 @@
                 placeholder="กรอกชื่อของคุณ"
                 autocomplete="name"
                 maxlength="100"
-                required
               />
             </div>
-
-            <p id="customerNameError" class="field-error"></p>
           </div>
 
           <div class="form-group">
-            <label for="companyName">
-              บริษัท / ร้านค้า
-              <span class="required">*</span>
-            </label>
+            <label for="companyName">บริษัท / ร้านค้า</label>
 
             <div class="input-wrap">
               <span class="material-symbols-outlined input-icon">apartment</span>
@@ -214,18 +204,12 @@
                 placeholder="กรอกชื่อบริษัทหรือร้านค้า"
                 autocomplete="organization"
                 maxlength="150"
-                required
               />
             </div>
-
-            <p id="companyNameError" class="field-error"></p>
           </div>
 
           <div class="form-group">
-            <label for="phoneNumber">
-              เบอร์โทรศัพท์
-              <span class="required">*</span>
-            </label>
+            <label for="phoneNumber">เบอร์โทรศัพท์</label>
 
             <div class="input-wrap">
               <span class="material-symbols-outlined input-icon">call</span>
@@ -238,7 +222,6 @@
                 placeholder="เช่น 0812345678"
                 autocomplete="tel"
                 maxlength="20"
-                required
               />
             </div>
 
@@ -246,7 +229,7 @@
           </div>
 
           <label class="consent-row">
-            <input id="formConsent" type="checkbox" required />
+            <input id="formConsent" type="checkbox" />
 
             <span>
               ยินยอมให้บริษัทใช้ข้อมูลเพื่อติดต่อเกี่ยวกับสินค้า
@@ -254,12 +237,12 @@
             </span>
           </label>
 
-          <p id="formConsentError" class="field-error consent-error"></p>
-
           <button id="formSubmitButton" class="submit-button" type="submit">
             <span class="material-symbols-outlined">redeem</span>
             <span>ลงทะเบียนรับสิทธิ์</span>
           </button>
+
+          <p class="skip-note">ไม่กรอกข้อมูลก็รับของได้ กดปุ่มด้านบนได้เลย</p>
         </form>
       </section>
 
@@ -268,7 +251,7 @@
       ========================== -->
       <section id="successView" class="view-section success-panel" hidden>
         <div class="success-icon">
-          <span class="material-symbols-outlined">check_circle</span>
+          <span class="material-symbols-outlined">check</span>
         </div>
 
         <h2>ลงทะเบียนเรียบร้อย</h2>
@@ -289,13 +272,12 @@
         </a>
       </section>
 
-      <footer>
-        © <span id="currentYear"></span> P.V.T. & T. Plas
-      </footer>
+      <footer>© <span id="currentYear"></span> P.V.T. & T. Plas — Beyond Durable</footer>
+
+      </div>
     </section>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="./register.js"></script>
 </body>
 </html>
