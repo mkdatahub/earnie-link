@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#17233D" />
+  <meta name="theme-color" content="#0B1F3A" />
 
   <title>ลงทะเบียนรับสิทธิ์ | P.V.T. & T. Plas</title>
 
@@ -20,264 +20,328 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="./register.css" />
+  <link rel="stylesheet" href="./register.css?v=20260731-1" />
 </head>
 
 <body>
   <main class="page-shell">
     <section class="register-card">
-
       <span class="grommet" aria-hidden="true"></span>
 
       <div class="card-body">
-
-      <div class="brand-header">
-        <div class="brand-mark">
-          <img
-            src="/images/W_Edit10.png"
-            alt="P.V.T. & T. Plas Logo"
-          />
-        </div>
-      </div>
-
-      <!-- <p class="concept-tag">
-        <span class="material-symbols-outlined">verified</span>
-        <span>Beyond Durable</span>
-      </p> -->
-
-      <!-- =========================
-           STEP 1: เลือกวิธีลงทะเบียน
-      ========================== -->
-      <section id="choiceView" class="view-section">
-        <!-- <h1>ลงทะเบียนรับของที่ระลึก</h1> -->
-        <p class="tagline">เลือกวิธีลงทะเบียนที่สะดวก</p>
-
-        <div class="choice-list">
-          <button id="cardChoiceButton" class="choice-button choice-button-primary" type="button">
-            <span class="choice-icon">
-              <span class="material-symbols-outlined">contact_page</span>
-            </span>
-            <span class="choice-copy">
-              <strong>ใช้นามบัตร</strong>
-              <small>ถ่ายรูปเพียงครั้งเดียว เร็วที่สุด</small>
-            </span>
-            <span class="material-symbols-outlined choice-arrow">arrow_forward_ios</span>
-            <span class="choice-badge">แนะนำ · เร็วที่สุด</span>
-          </button>
-
-          <button id="formChoiceButton" class="choice-button" type="button">
-            <span class="choice-icon">
-              <span class="material-symbols-outlined">edit_note</span>
-            </span>
-            <span class="choice-copy">
-              <strong>กรอกข้อมูลด้วยตนเอง</strong>
-              <small>ชื่อ บริษัท และเบอร์โทรศัพท์</small>
-            </span>
-            <span class="material-symbols-outlined choice-arrow">arrow_forward_ios</span>
-          </button>
-        </div>
-
-        <!-- <button id="skipChoiceButton" class="skip-button" type="button">
-          ข้ามและรับของเลย
-        </button> -->
-      </section>
-
-      <!-- =========================
-           STEP 2A: ถ่ายนามบัตร
-      ========================== -->
-      <section id="cardView" class="view-section" hidden>
-        
-
-        <h1>ถ่ายนามบัตร</h1>
-
-        <p class="tagline">
-          วางนามบัตรให้เห็นข้อมูลครบถ้วน<br />
-          แล้วถ่ายภาพหรือเลือกรูปจากเครื่อง
-        </p>
-
-        <form id="cardForm" class="register-form" novalidate>
-          <label id="uploadArea" class="upload-area" for="businessCardImage">
-            <input
-              id="businessCardImage"
-              name="businessCardImage"
-              type="file"
-              accept="image/*"
-              capture="environment"
+        <div class="brand-header">
+          <div class="brand-mark">
+            <img
+              src="/images/W_Edit10.png"
+              alt="P.V.T. & T. Plas Logo"
             />
+          </div>
+        </div>
 
-            <div id="uploadPlaceholder" class="upload-placeholder">
-              <span class="material-symbols-outlined upload-icon">
-                photo_camera
+        <!-- =========================
+             STEP 1: เลือกวิธีลงทะเบียน
+        ========================== -->
+        <section id="choiceView" class="view-section">
+          <p class="tagline">เลือกวิธีลงทะเบียนที่สะดวก</p>
+
+          <div class="choice-list">
+            <button
+              id="cardChoiceButton"
+              class="choice-button choice-button-primary"
+              type="button"
+            >
+              <span class="choice-icon">
+                <span class="material-symbols-outlined">contact_page</span>
               </span>
 
-              <strong>แตะเพื่อถ่ายนามบัตร</strong>
-              <small>หรือเลือกรูปจากโทรศัพท์</small>
-            </div>
+              <span class="choice-copy">
+                <strong>ใช้นามบัตร</strong>
+                <small>ถ่ายรูปเพียงครั้งเดียว เร็วที่สุด</small>
+              </span>
 
-            <img
-              id="cardPreview"
-              class="card-preview"
-              alt="ภาพตัวอย่างนามบัตร"
+              <span class="material-symbols-outlined choice-arrow">
+                arrow_forward_ios
+              </span>
+
+              <span class="choice-badge">แนะนำ · เร็วที่สุด</span>
+            </button>
+
+            <button
+              id="formChoiceButton"
+              class="choice-button"
+              type="button"
+            >
+              <span class="choice-icon">
+                <span class="material-symbols-outlined">edit_note</span>
+              </span>
+
+              <span class="choice-copy">
+                <strong>กรอกข้อมูลด้วยตนเอง</strong>
+                <small>ชื่อ บริษัท และเบอร์โทรศัพท์</small>
+              </span>
+
+              <span class="material-symbols-outlined choice-arrow">
+                arrow_forward_ios
+              </span>
+            </button>
+          </div>
+        </section>
+
+        <!-- =========================
+             STEP 2A: ถ่ายนามบัตร
+        ========================== -->
+        <section id="cardView" class="view-section" hidden>
+          <h1>ถ่ายนามบัตร</h1>
+
+          <p class="tagline">
+            วางนามบัตรให้เห็นข้อมูลครบถ้วน<br />
+            แล้วถ่ายภาพหรือเลือกรูปจากเครื่อง
+          </p>
+
+          <form id="cardForm" class="register-form" novalidate>
+            <label
+              id="uploadArea"
+              class="upload-area"
+              for="businessCardImage"
+            >
+              <input
+                id="businessCardImage"
+                name="businessCardImage"
+                type="file"
+                accept="image/*"
+                capture="environment"
+              />
+
+              <div id="uploadPlaceholder" class="upload-placeholder">
+                <span class="material-symbols-outlined upload-icon">
+                  photo_camera
+                </span>
+
+                <strong>แตะเพื่อถ่ายนามบัตร</strong>
+                <small>หรือเลือกรูปจากโทรศัพท์</small>
+              </div>
+
+              <img
+                id="cardPreview"
+                class="card-preview"
+                alt="ภาพตัวอย่างนามบัตร"
+                hidden
+              />
+            </label>
+
+            <p
+              id="cardImageError"
+              class="field-error"
+              aria-live="polite"
+            ></p>
+
+            <button
+              id="retakeButton"
+              class="secondary-button"
+              type="button"
               hidden
-            />
-          </label>
+            >
+              <span class="material-symbols-outlined">refresh</span>
+              <span>ถ่ายใหม่</span>
+            </button>
 
-          <p id="cardImageError" class="field-error"></p>
+            <label class="consent-row">
+              <input id="cardConsent" type="checkbox" />
+
+              <span>
+                ยินยอมให้บริษัทใช้ข้อมูลจากนามบัตร
+                เพื่อติดต่อเกี่ยวกับสินค้า บริการ และกิจกรรมของบริษัท
+              </span>
+            </label>
+
+            <p
+              id="cardConsentError"
+              class="field-error"
+              aria-live="polite"
+            ></p>
+
+            <button
+              id="cardSubmitButton"
+              class="submit-button"
+              type="submit"
+            >
+              <span class="material-symbols-outlined">redeem</span>
+              <span>ส่งนามบัตรและรับสิทธิ์</span>
+            </button>
+          </form>
 
           <button
-            id="retakeButton"
-            class="secondary-button"
+            class="back-button"
             type="button"
-            hidden
+            data-back-to-choice
           >
-            <span class="material-symbols-outlined">refresh</span>
-            <span>ถ่ายใหม่</span>
+            <span class="material-symbols-outlined">arrow_back</span>
+            <span>ย้อนกลับ</span>
+          </button>
+        </section>
+
+        <!-- =========================
+             STEP 2B: กรอกข้อมูล
+        ========================== -->
+        <section id="formView" class="view-section" hidden>
+          <button
+            class="back-button"
+            type="button"
+            data-back-to-choice
+          >
+            <span class="material-symbols-outlined">arrow_back</span>
+            <span>ย้อนกลับ</span>
           </button>
 
-          <label class="consent-row">
-            <input id="cardConsent" type="checkbox" />
+          <h1>กรอกข้อมูล</h1>
 
-            <span>
-              ยินยอมให้บริษัทใช้ข้อมูลจากนามบัตร
-              เพื่อติดต่อเกี่ยวกับสินค้า บริการ และกิจกรรมของบริษัท
-            </span>
-          </label>
+          <p class="tagline">
+            กรุณากรอกข้อมูลให้ครบถ้วนเพื่อรับสิทธิ์
+          </p>
 
-          <button id="cardSubmitButton" class="submit-button" type="submit">
-            <span class="material-symbols-outlined">redeem</span>
-            <span>ส่งนามบัตรและรับสิทธิ์</span>
-          </button>
+          <form id="registerForm" class="register-form" novalidate>
+            <div class="form-group">
+              <label for="customerName">ชื่อผู้ติดต่อ</label>
 
-          
+              <div class="input-wrap">
+                <span class="material-symbols-outlined input-icon">
+                  person
+                </span>
 
-          <!-- <p class="skip-note">ไม่มีนามบัตรก็รับของได้ ข้ามขั้นตอนนี้ได้เลย</p> -->
-        </form>
-        <button class="back-button" type="button" data-back-to-choice>
-          <span class="material-symbols-outlined">arrow_back</span>
-          <span>ย้อนกลับ</span>
-        </button>
-      </section>
+                <input
+                  id="customerName"
+                  name="customerName"
+                  type="text"
+                  placeholder="กรอกชื่อของคุณ"
+                  autocomplete="name"
+                  maxlength="100"
+                />
+              </div>
 
-      <!-- =========================
-           STEP 2B: กรอกข้อมูล
-      ========================== -->
-      <section id="formView" class="view-section" hidden>
-        <button class="back-button" type="button" data-back-to-choice>
-          <span class="material-symbols-outlined">arrow_back</span>
-          <span>ย้อนกลับ</span>
-        </button>
-
-        <h1>กรอกข้อมูล</h1>
-
-        <p class="tagline">
-          ใช้เวลาเพียงเล็กน้อย ไม่บังคับทุกช่อง
-        </p>
-
-        <form id="registerForm" class="register-form" novalidate>
-          <div class="form-group">
-            <label for="customerName">ชื่อผู้ติดต่อ</label>
-
-            <div class="input-wrap">
-              <span class="material-symbols-outlined input-icon">person</span>
-
-              <input
-                id="customerName"
-                name="customerName"
-                type="text"
-                placeholder="กรอกชื่อของคุณ"
-                autocomplete="name"
-                maxlength="100"
-              />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="companyName">บริษัท / ร้านค้า</label>
-
-            <div class="input-wrap">
-              <span class="material-symbols-outlined input-icon">apartment</span>
-
-              <input
-                id="companyName"
-                name="companyName"
-                type="text"
-                placeholder="กรอกชื่อบริษัทหรือร้านค้า"
-                autocomplete="organization"
-                maxlength="150"
-              />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="phoneNumber">เบอร์โทรศัพท์</label>
-
-            <div class="input-wrap">
-              <span class="material-symbols-outlined input-icon">call</span>
-
-              <input
-                id="phoneNumber"
-                name="phoneNumber"
-                type="tel"
-                inputmode="tel"
-                placeholder="เช่น 0812345678"
-                autocomplete="tel"
-                maxlength="20"
-              />
+              <p
+                id="customerNameError"
+                class="field-error"
+                aria-live="polite"
+              ></p>
             </div>
 
-            <p id="phoneNumberError" class="field-error"></p>
+            <div class="form-group">
+              <label for="companyName">บริษัท / ร้านค้า</label>
+
+              <div class="input-wrap">
+                <span class="material-symbols-outlined input-icon">
+                  apartment
+                </span>
+
+                <input
+                  id="companyName"
+                  name="companyName"
+                  type="text"
+                  placeholder="กรอกชื่อบริษัทหรือร้านค้า"
+                  autocomplete="organization"
+                  maxlength="150"
+                />
+              </div>
+
+              <p
+                id="companyNameError"
+                class="field-error"
+                aria-live="polite"
+              ></p>
+            </div>
+
+            <div class="form-group">
+              <label for="phoneNumber">เบอร์โทรศัพท์</label>
+
+              <div class="input-wrap">
+                <span class="material-symbols-outlined input-icon">
+                  call
+                </span>
+
+                <input
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  type="tel"
+                  inputmode="tel"
+                  placeholder="เช่น 0812345678"
+                  autocomplete="tel"
+                  maxlength="20"
+                />
+              </div>
+
+              <p
+                id="phoneNumberError"
+                class="field-error"
+                aria-live="polite"
+              ></p>
+            </div>
+
+            <label class="consent-row">
+              <input id="formConsent" type="checkbox" />
+
+              <span>
+                ยินยอมให้บริษัทใช้ข้อมูลเพื่อติดต่อเกี่ยวกับสินค้า
+                บริการ และกิจกรรมของบริษัท
+              </span>
+            </label>
+
+            <p
+              id="formConsentError"
+              class="field-error"
+              aria-live="polite"
+            ></p>
+
+            <button
+              id="formSubmitButton"
+              class="submit-button"
+              type="submit"
+            >
+              <span class="material-symbols-outlined">redeem</span>
+              <span>ลงทะเบียนรับสิทธิ์</span>
+            </button>
+          </form>
+        </section>
+
+        <!-- =========================
+             STEP 3: ลงทะเบียนสำเร็จ
+        ========================== -->
+        <section
+          id="successView"
+          class="view-section success-panel"
+          hidden
+        >
+          <div class="success-icon">
+            <span class="material-symbols-outlined">check</span>
           </div>
 
-          <label class="consent-row">
-            <input id="formConsent" type="checkbox" />
+          <h2>ลงทะเบียนเรียบร้อย</h2>
 
-            <span>
-              ยินยอมให้บริษัทใช้ข้อมูลเพื่อติดต่อเกี่ยวกับสินค้า
-              บริการ และกิจกรรมของบริษัท
-            </span>
-          </label>
+          <p>
+            กรุณาแสดงหน้าจอนี้กับเจ้าหน้าที่<br />
+            เพื่อรับของที่ระลึก
+          </p>
 
-          <button id="formSubmitButton" class="submit-button" type="submit">
-            <span class="material-symbols-outlined">redeem</span>
-            <span>ลงทะเบียนรับสิทธิ์</span>
-          </button>
+          <div class="reference-card">
+            <span class="reference-label">หมายเลขลงทะเบียน</span>
+            <strong id="referenceNumber">PVT-0000</strong>
+          </div>
 
-          <p class="skip-note">ไม่กรอกข้อมูลก็รับของได้ กดปุ่มด้านบนได้เลย</p>
-        </form>
-      </section>
+          <a class="link-hub-button" href="/">
+            <span>เข้าสู่ Link Hub</span>
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </section>
 
-      <!-- =========================
-           STEP 3: ลงทะเบียนสำเร็จ
-      ========================== -->
-      <section id="successView" class="view-section success-panel" hidden>
-        <div class="success-icon">
-          <span class="material-symbols-outlined">check</span>
-        </div>
-
-        <h2>ลงทะเบียนเรียบร้อย</h2>
-
-        <p>
-          กรุณาแสดงหน้าจอนี้กับเจ้าหน้าที่<br />
-          เพื่อรับของที่ระลึก
-        </p>
-
-        <div class="reference-card">
-          <span class="reference-label">หมายเลขลงทะเบียน</span>
-          <strong id="referenceNumber">PVT-0000</strong>
-        </div>
-
-        <a class="link-hub-button" href="/">
-          <span>เข้าสู่ Link Hub</span>
-          <span class="material-symbols-outlined">arrow_forward</span>
-        </a>
-      </section>
-
-      <footer>© <span id="currentYear"></span> P.V.T. & T. Plas — Beyond Durable</footer>
-
+        <footer>
+          © <span id="currentYear"></span>
+          P.V.T. & T. Plas — Beyond Durable
+        </footer>
       </div>
     </section>
   </main>
 
-  <script src="./register.js"></script>
+  <!-- ต้องโหลด Supabase ก่อน register.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./register.js?v=20260731-1"></script>
 </body>
 </html>
