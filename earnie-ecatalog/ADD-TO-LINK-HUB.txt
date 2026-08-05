@@ -1,0 +1,28 @@
+วิธีเพิ่มปุ่ม E-Catalog ใน Link Hub
+====================================
+
+1) คัดลอกโฟลเดอร์และไฟล์ทั้งหมดจากชุดนี้ ไปไว้ที่ Root ของโปรเจกต์ earnie-link
+2) เพิ่มรายการนี้ในไฟล์ script.js ตรง Array รายการลิงก์ของเดิม
+
+{
+  title: "E-Catalog",
+  subtitle: "แคตตาล็อกสินค้า P.V.T. & T. PLAS",
+  icon: "menu_book",
+  url: "./catalog.html"
+}
+
+ถ้าโครงสร้าง script.js ของเดิมใช้ชื่อ key ไม่เหมือนกัน ให้ใช้ลิงก์ปลายทางนี้:
+./catalog.html
+
+ตัวอย่าง HTML แบบใส่ตรงๆ:
+<a href="./catalog.html" class="link-item">
+  <span class="material-symbols-outlined">menu_book</span>
+  <span>E-Catalog</span>
+</a>
+
+การอัปเดตสินค้าในอนาคต
+========================
+- แก้ข้อมูลที่ไฟล์ data/products.js
+- เปลี่ยนรูปที่ images/products/
+- Export PowerPoint เป็น PDF แล้วนำไฟล์ใหม่ไปทับใน catalog/
+- หากเปลี่ยนชื่อ PDF ต้องแก้ลิงก์ใน catalog.html, product.html และ js/product.js

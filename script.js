@@ -5,7 +5,13 @@
 
 const links = [
   {
-    title: "เว็บไซต์หลัก",
+  title: "E-Catalog",
+  subtitle: "แคตตาล็อกสินค้า P.V.T. & T. PLAS",
+  icon: "menu_book",
+  url: "earnie-ecatalog/catalog.html",
+},
+  {
+    title: "เว็บไซต์",
     subtitle: "รู้จักสินค้าและบริการของเรา",
     icon: "language",
     url: "https://pvt-landing.pages.dev/",
