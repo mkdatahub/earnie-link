@@ -44,7 +44,7 @@ window.PVTT_PRODUCTS = [
     usage: 'โรงเรือนเพาะเห็ด · คลุมก้อนเชื้อเห็ด · ควบคุมความชื้นและอุณหภูมิ'
   },
   {
-    id: 'nursery-bag', no: '05', nameTh: 'ถุงเพาะชำ', nameEn: 'Nursery Bag', image: './images/products/plastic-bag.jpg',
+    id: 'nursery-bag', no: '05', nameTh: 'ถุงเพาะชำ', nameEn: 'Nursery Bag', image: './images/products/seedbag.jpg',
     summary: 'ถุงพลาสติกสีดำและขาว นิ่ม เหนียว ทนทาน มีรูระบายน้ำที่ก้นถุง เหมาะกับงานเพาะชำกล้าไม้ทุกชนิด',
     specs: [
       ['สี', 'ดำ · ขาว'],
@@ -55,7 +55,7 @@ window.PVTT_PRODUCTS = [
     usage: 'เพาะกล้าไม้ · เพาะชำต้นไม้ · เรือนเพาะชำ · สวนไม้และงานเกษตรทั่วไป'
   },
   {
-    id: 'multi-purpose-bag', no: '06', nameTh: 'ถุงอเนกประสงค์', nameEn: 'Multi-purpose Bag', image: './images/products/plastic-bag.jpg',
+    id: 'multi-purpose-bag', no: '06', nameTh: 'ถุงอเนกประสงค์', nameEn: 'Multi-purpose Bag', image: './images/products/multi-purpose-bag.jpg',
     summary: 'ถุงพลาสติกเนื้อหนาพิเศษ เหนียว ทนทาน รับน้ำหนักได้มาก ไม่ฉีกขาดง่าย เหมาะสำหรับผลผลิตทางการเกษตร',
     specs: [
       ['คุณสมบัติ', 'เนื้อหนาพิเศษ · เหนียว · รับน้ำหนักได้มาก · ใช้งานซ้ำได้'],
@@ -65,7 +65,7 @@ window.PVTT_PRODUCTS = [
     usage: 'ใส่ขิง · ใส่พืชผลทางการเกษตร · บรรจุสินค้าที่มีน้ำหนักมาก · งานขนส่งทั่วไป'
   },
   {
-    id: 'garbage-bag', no: '07', nameTh: 'ถุงขยะ', nameEn: 'Garbage Bag', image: './images/products/plastic-bag.jpg',
+    id: 'garbage-bag', no: '07', nameTh: 'ถุงขยะ', nameEn: 'Garbage Bag', image: './images/products/garbage-bag.jpg',
     summary: 'ถุงขยะเนื้อเหนียว ไม่ขาดง่าย ไม่มีกลิ่น รองรับการใช้งานทั้งในบ้าน สำนักงาน ร้านอาหาร และโรงงาน',
     specs: [
       ['สี', 'ดำ'],
@@ -86,7 +86,7 @@ window.PVTT_PRODUCTS = [
     usage: 'แปลงผัก · สวนผลไม้ · ไร่พืชเศรษฐกิจ · ควบคุมวัชพืชและความชื้น'
   },
   {
-    id: 'spray-tape', no: '09', nameTh: 'เทปน้ำพุ่ง', nameEn: 'Spray Tape', image: './images/products/pe-pipe.jpg',
+    id: 'spray-tape', no: '09', nameTh: 'เทปน้ำพุ่ง', nameEn: 'Spray Tape', image: './images/products/Rain_Tape.jpg',
     summary: 'เทปให้น้ำแบบพ่นฝอย กระจายน้ำทั่วแปลงอย่างสม่ำเสมอ ประหยัดน้ำและแรงงาน ติดตั้งง่าย',
     specs: [
       ['ขนาดท่อ', '30 · 40 · 50 มม.'],
@@ -96,7 +96,7 @@ window.PVTT_PRODUCTS = [
     usage: 'แปลงผัก · สวนเกษตร · ระบบให้น้ำพืชผล · แปลงเพาะกล้า'
   },
   {
-    id: 'pe-pipe', no: '10', nameTh: 'ท่อ PE / LDPE / HDPE', nameEn: 'PE / LDPE / HDPE Pipe', image: './images/products/pe-pipe.jpg',
+    id: 'pe-pipe', no: '10', nameTh: 'ท่อ PE / LDPE / HDPE', nameEn: 'PE / LDPE / HDPE Pipe', image: './images/products/Ldpe.jpg',
     summary: 'ท่อพลาสติก PE คุณภาพสูง เหมาะสำหรับระบบน้ำเพื่อการเกษตร ทนแรงดัน ยืดหยุ่น ไม่แตกง่าย และใช้งานยาวนาน',
     specs: [
       ['ประเภท', 'PE · LDPE · HDPE'],
