@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f1670" />
+  <title>P.V.T. & T. PLAS | E-Catalog Flipbook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="./flipbook/flipbook.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell nav">
+      <a class="brand" href="./index.html" aria-label="กลับหน้า Link Hub">
+        <span class="brand-mark">PVT</span>
+        <span>
+          <strong>P.V.T. &amp; T. PLAS</strong>
+          <small>E-Catalog Flipbook</small>
+        </span>
+      </a>
+      <div class="nav-actions">
+        <a class="btn ghost" href="./index.html">
+          <span class="material-symbols-outlined">home</span>
+          <span>Link Hub</span>
+        </a>
+        <a class="btn primary" href="./catalog/PVTT_E_Catalog_Final050826.pdf" target="_blank" rel="noopener">
+          <span class="material-symbols-outlined">download</span>
+          <span>PDF</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="catalog-shell">
+    <section class="catalog-heading">
+      <p class="eyebrow">PRODUCT CATALOG</p>
+      <h1>แคตตาล็อกสินค้า</h1>
+      <p>เลื่อนหรือกดลูกศรเพื่อพลิกหน้า</p>
+    </section>
+
+    <section class="viewer-card" aria-label="E-Catalog Flipbook">
+      <div id="book" class="book" aria-live="polite"></div>
+
+      <div class="toolbar">
+        <button id="prevBtn" class="round-btn" type="button" aria-label="หน้าก่อนหน้า">
+          <span class="material-symbols-outlined">arrow_back</span>
+        </button>
+
+        <div class="page-status">
+          <span>หน้า</span>
+          <strong id="currentPage">1</strong>
+          <span>/</span>
+          <span id="totalPages">13</span>
+        </div>
+
+        <button id="nextBtn" class="round-btn" type="button" aria-label="หน้าถัดไป">
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+      </div>
+    </section>
+
+    <p id="loadMessage" class="load-message">กำลังโหลดแคตตาล็อก...</p>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
+  <script src="./flipbook/flipbook.js"></script>
+</body>
+</html>
